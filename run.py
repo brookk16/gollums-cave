@@ -1,11 +1,10 @@
 import json
 import os
-
 from flask import (
     Flask, session, render_template, flash, request, redirect, url_for)
 
 app = Flask(__name__)
-app.secret_key = os.getenv("SECRET", "olorin")
+app.secret_key = os.getenv("SECRET", "not a secret")
 
 MAX_ATTEMPTS = 3
 with open("data/riddles.json") as riddle_file:
@@ -15,6 +14,9 @@ high_score = {
     "name": "nobody",
     "score": 0
 }
+
+wrong_guesses = []
+
 
 
 @app.route("/")
@@ -28,6 +30,7 @@ def new_game():
     session["score"] = 0
     session["riddle_num"] = 0
     session["riddle_attempts"] = MAX_ATTEMPTS
+    session["wrong_guesses"] = "" 
     return redirect(url_for("riddle"))
 
 
@@ -36,7 +39,7 @@ def riddle():
     if "player" not in session:
         return redirect(url_for("index"))
 
-    if request.method == "POST" and session["riddle_num"] < len(RIDDLES):
+    if request.method == "POST" and session["riddle_num"] < len(RIDDLES): 
         previous_riddle = RIDDLES[session["riddle_num"]]
         if request.form["answer"].lower() == previous_riddle["answer"]:
             session["riddle_num"] += 1
@@ -52,6 +55,7 @@ def riddle():
             if session["riddle_num"] < len(RIDDLES):
                 flash("Wrong answer, %s. Better luck with this riddle:" % (
                       session["player"]))
+                return session["wrong_guesses"]
         else:
             session["riddle_attempts"] -= 1
             flash("Wrong answer, %s. You have %s attempts left." % (

@@ -1,8 +1,8 @@
 [
-    {"riddle": "What has roots as nobody sees, Is taller than trees, Up, up it goes, And yet never grows??", "answer": "mountain"},
-    {"riddle": "Voiceless it cries, Wingless flutters, Toothless bites, Mouthless mutters", "answer": "wind"},
-    {"riddle": "It cannot be seen, cannot be felt, Cannot be heard, cannot be smelt. It lies behind stars and under hills, And empty holes it fills. It comes first and follows after, Ends life, kills laughter.", "answer": "dark"},
-    {"riddle": "Alive without breath, As cold as death; Never thirsty, ever drinking, All in mail never clinking.", "answer": "fish"}
-    {"riddle": "This thing all things devours: Birds, beasts, trees, flowers; Gnaws iron, bites steel; Grinds hard stones to meal; Slays king, ruins town, And beats high mountain down.", "answer": "time"}
+    {"question": "What has roots as nobody sees, Is taller than trees, Up, up it goes, And yet never grows??", "answer": "mountain"},
+    {"question": "Voiceless it cries, Wingless flutters, Toothless bites, Mouthless mutters", "answer": "wind"},
+    {"question": "It cannot be seen, cannot be felt, Cannot be heard, cannot be smelt. It lies behind stars and under hills, And empty holes it fills. It comes first and follows after, Ends life, kills laughter.", "answer": "dark"},
+    {"question": "Alive without breath, As cold as death; Never thirsty, ever drinking, All in mail never clinking.", "answer": "fish"},
+    {"question": "This thing all things devours: Birds, beasts, trees, flowers; Gnaws iron, bites steel; Grinds hard stones to meal; Slays king, ruins town, And beats high mountain down.", "answer": "time"}
 
 ]

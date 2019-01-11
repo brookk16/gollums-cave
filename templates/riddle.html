@@ -6,7 +6,7 @@
         <em>{{ question }}</em>
     </div>
     <form method="POST" class="row">
-        <div class="input-group mb-3 col col-lg-8"">
+        <div class="input-group mb-3 col col-lg-8">
             <div class="input-group-prepend">
                 <span class="input-group-text" id="basic-addon1">Your answer:</span>
             </div>
@@ -16,4 +16,7 @@
             </div>
         </div>
     </form>
+        <div class="row">
+            <p>{{ wrong_guesses }}</p>
+        </div>
 {% endblock %}
