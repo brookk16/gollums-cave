@@ -4,19 +4,16 @@ from flask import (
     Flask, session, render_template, flash, request, redirect, url_for)
 
 app = Flask(__name__)
-app.secret_key = os.getenv("SECRET", "not a secret")
+app.secret_key = os.getenv("SECRET", "olorin")
 
-MAX_ATTEMPTS = 3
+MAX_ATTEMPTS = 2
 with open("data/riddles.json") as riddle_file:
     RIDDLES = json.load(riddle_file)
 
 high_score = {
-    "name": "nobody",
+    "name": "",
     "score": 0
 }
-
-wrong_guesses = []
-
 
 
 @app.route("/")
@@ -30,7 +27,8 @@ def new_game():
     session["score"] = 0
     session["riddle_num"] = 0
     session["riddle_attempts"] = MAX_ATTEMPTS
-    session["wrong_guesses"] = "" 
+    session["wrong_answers"] = [""]
+ 
     return redirect(url_for("riddle"))
 
 
@@ -41,30 +39,51 @@ def riddle():
 
     if request.method == "POST" and session["riddle_num"] < len(RIDDLES): 
         previous_riddle = RIDDLES[session["riddle_num"]]
-        if request.form["answer"].lower() == previous_riddle["answer"]:
+        
+        answer = request.form["answer"].lower()
+        
+        
+        if answer == previous_riddle["answer"]:
             session["riddle_num"] += 1
             session["score"] += 1
+            print(request.form["answer"])
+            
             if session["riddle_num"] < len(RIDDLES):
                 flash("Correct answer, %s! Your score is %s." % (
                       session["player"], session["score"]))
+            
             else:
                 flash("Correct answer, %s!" % session["player"])
+        
         elif not session["riddle_attempts"]:
             session["riddle_num"] += 1
             session["riddle_attempts"] = MAX_ATTEMPTS
+            session["wrong_answers"] = [""]
+            
+            
             if session["riddle_num"] < len(RIDDLES):
                 flash("Wrong answer, %s. Better luck with this riddle:" % (
                       session["player"]))
-                return session["wrong_guesses"]
+                
+                
+                
         else:
+            
             session["riddle_attempts"] -= 1
+            
+            
             flash("Wrong answer, %s. You have %s attempts left." % (
                   session["player"], session["riddle_attempts"]))
+            flash("wrong answers: %s" % (answer)) """shows bad answers, but deletes the old one when a new one comes in"
+            
+            
 
     if session["riddle_num"] >= len(RIDDLES):
+        
         if session["score"] >= high_score["score"]:
             high_score["score"] = session["score"]
             high_score["name"] = session["player"]
+        
         return render_template("game_over.html", player=session["player"],
                                score=session["score"],
                                highscore=high_score["score"],
