@@ -1,0 +1,34 @@
+main {
+    background: url("img/index.jpg") no-repeat left top;
+    min-height: 800px;
+}
+
+@font-face {
+    font-family: Bilbo;
+    src: url(/fonts/bilboregular.ttf);
+}
+
+@font-face {
+    font-family: Elven;
+    src: url(/fonts/elvencommonspeak.ttf);
+}
+
+@font-face {
+    font-family: Ringbearer;
+    src: url(/fonts/RINGM.ttf);
+}
+
+
+.ringbearer_font {
+    font-family: Ringbearer, Helvetica, Arial, sans-serif;
+}
+
+.container {
+    margin: 0px;
+    padding: 0px;
+    max-width: 100%
+}
+
+.footer {
+    background-color: black;
+}

@@ -1,34 +1,55 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+    <link rel="stylesheet" href="{{ url_for('static', filename='main.css') }}">
 
     <title>Riddle</title>
 </head>
+
 <body>
-    <nav class="navbar navbar-dark bg-dark mb-4">
-        <a href="{{ url_for('index') }}" class="navbar-brand">Riddle game</a>
-        <ul class="nav">
+    <nav class="navbar mb-4">
+        <a href="{{ url_for('index') }}" class="navbar-brand">Gollum's cave</a>
+        <ul class="nav ringbearer_font">
             <li class="nav-item"><a class="nav-link" href="{{ url_for('index') }}">Home</a></li>
-            <li class="nav-item"><a class="nav-link" href="{{ url_for('riddle') }}">Riddles</a></li>
+            <li class="nav-item"><a class="nav-link" href="{{ url_for('riddle') }}">New Game</a></li>
+            <li class="nav-item"><a class="nav-link" href="{{ url_for('highscores') }}">Highscores</a></li>
+            <li class="nav-item"><a class="nav-link" href="{{ url_for('about') }}">About</a></li>
         </ul>
     </nav>
-    <div class="container">
-        <header>
-            {% with messages = get_flashed_messages() %}
-            {% for message in messages %}
-            <div class="alert alert-warning" role="alert">{{ message }}</div>
-            {% endfor %}
-            {% endwith %}
-        </header>
-        <main >{% block content %} {% endblock %}</main>
-    </div>
 
+    <main>
+        <div class="container">
+            <header>
+                {% with messages = get_flashed_messages() %} {% for message in messages %}
+                <div class="alert alert-warning" role="alert">{{ message }}</div>
+                {% endfor %} {% endwith %}
+            </header>
+            <main>
+                <div class="row">
+                    <div class="col-4">
+
+                    </div>
+                    <div class="col-6">
+
+                        {% block content %} {% endblock %}
+                    </div>
+                    <div class="col-2">
+
+                    </div>
+
+                </div>
+            </main>
+        </div>
+    </main>
+    <footer class="footer">
+        
+    </footer>
     <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
-    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
 </body>
+
 </html>

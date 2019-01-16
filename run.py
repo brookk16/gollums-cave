@@ -6,7 +6,7 @@ from flask import (
 app = Flask(__name__)
 app.secret_key = os.getenv("SECRET", "olorin")
 
-MAX_ATTEMPTS = 2
+MAX_ATTEMPTS = 3
 with open("data/riddles.json") as riddle_file:
     RIDDLES = json.load(riddle_file)
 
@@ -14,6 +14,18 @@ high_score = {
     "name": "",
     "score": 0
 }
+
+wrong_answers = []
+
+def add_wrong_answers(username, answer):
+
+    wrong_answers.append({"username":username, "wrong_answer":answer})
+
+def clear_wrong_answers():
+    
+    del wrong_answers[:]
+    
+    
 
 
 @app.route("/")
@@ -27,10 +39,18 @@ def new_game():
     session["score"] = 0
     session["riddle_num"] = 0
     session["riddle_attempts"] = MAX_ATTEMPTS
-    session["wrong_answers"] = [""]
+    session["wrong_answers"] = wrong_answers
+    
  
     return redirect(url_for("riddle"))
 
+@app.route("/about", methods=["GET","POST"])
+def about():
+    return render_template("about.html")
+
+@app.route("/highscores", methods=["GET","POST"])
+def highscores():
+    return render_template("highscores.html")
 
 @app.route("/riddle", methods=["GET", "POST"])
 def riddle():
@@ -38,15 +58,20 @@ def riddle():
         return redirect(url_for("index"))
 
     if request.method == "POST" and session["riddle_num"] < len(RIDDLES): 
+        
         previous_riddle = RIDDLES[session["riddle_num"]]
         
         answer = request.form["answer"].lower()
+        
+       
+        
+        
         
         
         if answer == previous_riddle["answer"]:
             session["riddle_num"] += 1
             session["score"] += 1
-            print(request.form["answer"])
+            
             
             if session["riddle_num"] < len(RIDDLES):
                 flash("Correct answer, %s! Your score is %s." % (
@@ -58,12 +83,13 @@ def riddle():
         elif not session["riddle_attempts"]:
             session["riddle_num"] += 1
             session["riddle_attempts"] = MAX_ATTEMPTS
-            session["wrong_answers"] = [""]
+            
             
             
             if session["riddle_num"] < len(RIDDLES):
                 flash("Wrong answer, %s. Better luck with this riddle:" % (
                       session["player"]))
+                clear_wrong_answers()
                 
                 
                 
@@ -71,10 +97,12 @@ def riddle():
             
             session["riddle_attempts"] -= 1
             
+            add_wrong_answers(session["player"],answer)
             
-            flash("Wrong answer, %s. You have %s attempts left." % (
-                  session["player"], session["riddle_attempts"]))
-            flash("wrong answers: %s" % (answer)) """shows bad answers, but deletes the old one when a new one comes in"
+            flash("Wrong answer, %s. You have %s attempts left. %s" % (
+            session["player"], session["riddle_attempts"], wrong_answers))
+             
+            
             
             
 
@@ -90,9 +118,10 @@ def riddle():
                                highscorer=high_score["name"])
 
     new_riddle = RIDDLES[session["riddle_num"]]
+    
     return render_template(
         "riddle.html", player=session["player"],
-        question=new_riddle["question"], riddle_num=session["riddle_num"])
+        question=new_riddle["question"], riddle_num=session["riddle_num"], wrong_answers=session["wrong_answers"], attempts=session["riddle_attempts"])
 
 
 if __name__ == "__main__":

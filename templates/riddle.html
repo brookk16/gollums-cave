@@ -1,6 +1,6 @@
 {% extends 'base.html' %} {% block content %}
 <div class="row">
-    <strong class="mr-2">Question {{ riddle_num + 1 }}: {{ player }}</strong>
+    <strong class="mr-2">Question {{ riddle_num + 1 }}:</strong>
     <em>{{ question }}</em>
 </div>
 <form method="POST" class="row">
@@ -14,5 +14,16 @@
         </div>
     </div>
 </form>
+<div>
+
+    <ul id="wrong-guesss">
+        {% for answer in wrong_answers %}
+
+
+        <li name="wrong-answer">{{ answer.wrong_answer }}</li>
+
+        {% endfor %}
+</div>
 
 {% endblock %}
+</ul>
