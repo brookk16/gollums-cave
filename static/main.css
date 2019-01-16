@@ -1,34 +1,150 @@
+/* General Styling */
+
+body,
+html {
+    height: 100%;
+    width: 100%;
+
+}
+
 main {
     background: url("img/index.jpg") no-repeat left top;
-    min-height: 800px;
+    min-height: 685px;
 }
 
 @font-face {
     font-family: Bilbo;
-    src: url(/fonts/bilboregular.ttf);
+    src: url(fonts/bilboregular.ttf);
 }
 
 @font-face {
     font-family: Elven;
-    src: url(/fonts/elvencommonspeak.ttf);
+    src: url(fonts/elvencommonspeak.ttf);
 }
 
 @font-face {
     font-family: Ringbearer;
-    src: url(/fonts/RINGM.ttf);
+    src: url(fonts/RINGM.ttf);
+}
+
+/* Navbar */
+
+.nav-font-styling {
+    font-family: 'Ringbearer', Helvetica, Arial, sans-serif;
+    text-decoration: none;
+    color: white;
+
+
+}
+
+.nav-font-styling:hover {
+    color: #b9bcbf;
+
+}
+
+.navbar {
+    background-color: black;
+    -webkit-box-shadow: 13px 13px 19px 11px rgba(0, 0, 0, 1);
+    -moz-box-shadow: 13px 13px 19px 11px rgba(0, 0, 0, 1);
+    box-shadow: 13px 13px 19px 11px rgba(0, 0, 0, 1);
+
+
+}
+
+.navbar_styling {
+    font-family: 'Bilbo', Helvetica, Arial, sans-serif;
+    font-size: 45px;
+    text-decoration: none;
+    color: white;
+    margin-top: 5px;
+    padding: 0px;
+
+}
+
+.navbar_styling:hover {
+    color: #b9bcbf;
 }
 
 
-.ringbearer_font {
-    font-family: Ringbearer, Helvetica, Arial, sans-serif;
-}
+
+/* base */
 
 .container {
     margin: 0px;
     padding: 0px;
-    max-width: 100%
+    max-width: 100%;
+
 }
+
+.positioning-of-gollum {
+    margin: 0px;
+    padding: 0px;
+
+}
+
+.positioning-of-gollum>img {
+    max-height: 500px;
+    margin-top: 165px;
+}
+
+/* index */
+
+.welcome-message-box {
+    -webkit-box-shadow: -1px 1px 5px 9px rgba(0, 0, 0, 0.75);
+    -moz-box-shadow: -1px 1px 5px 9px rgba(0, 0, 0, 0.75);
+    box-shadow: -1px 1px 5px 9px rgba(0, 0, 0, 0.75);
+    box-sizing: border-box;
+    margin-top: 106px;
+}
+
+.welcome-message {
+    margin: 24px;
+    text-align: center;
+    color: white;
+    font-family: 'Bilbo', Helvetica, Arial, sans-serif;
+    font-size: 33px;
+}
+
+.start-game-box {
+    margin: 15px;
+}
+
+.start-button {
+    color: black;
+    background-color: #b9bcbf;
+    font-family: 'Bilbo', Helvetica, Arial, sans-serif;
+}
+
+/* Footer */
 
 .footer {
     background-color: black;
+    -webkit-box-shadow: 0px -17px 15px 9px #000000;
+    -moz-box-shadow: 0px -17px 15px 9px #000000;
+    box-shadow: 0px -17px 15px 9px #000000;
+    font-size: 15px;
+
+}
+
+.copyright {
+    margin: 0px;
+    color: #b9bcbf
+}
+
+.copyright-style {
+    text-decoration: none;
+    color: #b9bcbf;
+}
+
+.copyright-style:hover {
+    color: white;
+}
+
+.github-link {
+    text-decoration: none;
+    color: #b9bcbf;
+}
+
+.github-link:hover {
+    color: white;
 }
