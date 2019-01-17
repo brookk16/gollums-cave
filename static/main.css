@@ -98,7 +98,7 @@ main {
 }
 
 .welcome-message {
-    margin: 24px;
+    padding: 17px 23px 8px 15px;
     text-align: center;
     color: white;
     font-family: 'Bilbo', Helvetica, Arial, sans-serif;
@@ -112,7 +112,17 @@ main {
 .start-button {
     color: black;
     background-color: #b9bcbf;
-    font-family: 'Bilbo', Helvetica, Arial, sans-serif;
+
+}
+
+/* Riddle */
+
+.question {
+    color: white;
+}
+
+#wrong-guesss {
+    color: white;
 }
 
 /* Footer */

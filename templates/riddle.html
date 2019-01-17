@@ -1,7 +1,7 @@
 {% extends 'base.html' %} {% block content %}
 <div class="row">
-    <strong class="mr-2">Question {{ riddle_num + 1 }}:</strong>
-    <em>{{ question }}</em>
+    <strong class="mr-2 question">Question {{ riddle_num + 1 }}:</strong>
+    <em class="question">{{ question }}</em>
 </div>
 <form method="POST" class="row">
     <div class="input-group mb-3 col col-lg-8">

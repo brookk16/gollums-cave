@@ -49,6 +49,9 @@ def highscores():
 
 @app.route("/riddle", methods=["GET", "POST"])
 def riddle():
+    
+    
+    
     if "player" not in session:
         return redirect(url_for("index"))
 
@@ -68,10 +71,11 @@ def riddle():
             session["score"] += 1
             
             
-            if session["riddle_num"] < len(RIDDLES):
+            if session["riddle_num"] < len(RIDDLES) and session["wrong_answers"]:
                 flash("Correct answer, %s! Your score is %s." % (
                       session["player"], session["score"]))
-                session.pop('wrong_answers', None)
+                session["wrong_answers"]=[]
+                
             
             else:
                 flash("Correct answer, %s!" % session["player"])
@@ -95,8 +99,8 @@ def riddle():
             
             session["wrong_answers"].append(answer)
             
-            flash("Wrong answer, %s. You have %s attempts left. %s" % (
-            session["player"], session["riddle_attempts"], wrong_answers))
+            flash("Wrong answer, %s. You have %s attempts left." % (
+            session["player"], session["riddle_attempts"]))
              
             
             
