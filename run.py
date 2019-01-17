@@ -17,14 +17,9 @@ high_score = {
 
 wrong_answers = []
 
-def add_wrong_answers(username, answer):
 
-    wrong_answers.append({"username":username, "wrong_answer":answer})
 
-def clear_wrong_answers():
-    
-    del wrong_answers[:]
-    
+
     
 
 
@@ -76,20 +71,21 @@ def riddle():
             if session["riddle_num"] < len(RIDDLES):
                 flash("Correct answer, %s! Your score is %s." % (
                       session["player"], session["score"]))
+                session.pop('wrong_answers', None)
             
             else:
                 flash("Correct answer, %s!" % session["player"])
         
-        elif not session["riddle_attempts"]:
+        elif not session["riddle_attempts"] and session["wrong_answers"]:
             session["riddle_num"] += 1
             session["riddle_attempts"] = MAX_ATTEMPTS
-            
+            session["wrong_answers"] = wrong_answers
             
             
             if session["riddle_num"] < len(RIDDLES):
                 flash("Wrong answer, %s. Better luck with this riddle:" % (
                       session["player"]))
-                clear_wrong_answers()
+                
                 
                 
                 
@@ -97,7 +93,7 @@ def riddle():
             
             session["riddle_attempts"] -= 1
             
-            add_wrong_answers(session["player"],answer)
+            session["wrong_answers"].append(answer)
             
             flash("Wrong answer, %s. You have %s attempts left. %s" % (
             session["player"], session["riddle_attempts"], wrong_answers))
