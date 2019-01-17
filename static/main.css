@@ -2,14 +2,17 @@
 
 body,
 html {
-    height: 100%;
     width: 100%;
-
+    height: 100%;
+    margin: 0px;
+    padding: 0px;
+    overflow-x: hidden;
 }
 
 main {
     background: url("img/index.jpg") no-repeat left top;
     min-height: 685px;
+    background-color: black;
 }
 
 @font-face {
@@ -77,14 +80,14 @@ main {
 }
 
 .positioning-of-gollum {
-    margin: 0px;
+    margin: 0px 0px 0px -15px;
     padding: 0px;
 
 }
 
 .positioning-of-gollum>img {
     max-height: 500px;
-    margin-top: 165px;
+    margin-top: 160px;
 }
 
 /* index */
@@ -125,6 +128,76 @@ main {
     color: white;
 }
 
+/* About */
+
+.summary-text {
+    color: white;
+    text-align: center;
+    margin: 50px 67px;
+    font-size: 18px;
+    font-family: 'Ringbearer', Helvetica, Arial, sans-serif;
+}
+
+.character-bio {
+    margin: 20px 0px;
+
+    
+}
+.title {
+    color: white;
+    text-align: center;
+    font-family: 'Ringbearer', Helvetica, Arial, sans-serif;
+    margin: 20px 0px;
+}
+
+.character-title {
+    color: white;
+    font-family: 'Ringbearer', Helvetica, Arial, sans-serif;
+    margin: 20px 0px;
+    
+}
+
+.summary-box {
+    background-color: #000000ad;
+
+}
+
+.bio-pic {
+    margin: 28px 0px 0px 46px;
+    max-width: 400px;
+    -webkit-box-shadow: -1px 1px 5px 9px rgba(0, 0, 0, 0.75);
+    -moz-box-shadow: -1px 1px 5px 9px rgba(0, 0, 0, 0.75);
+    box-shadow: -1px 1px 5px 9px rgba(0, 0, 0, 0.75);
+
+}
+
+.spacer {
+    height: 100px;
+}
+
+.bio-text {
+    color: white;
+    
+}
+
+.quote {
+    color: #b9bcbf;
+    font-size: 16px;
+}
+
+.character-text-spacing {
+    margin: 0px 0px 0px 40px;
+}
+.bio-links-title{
+    color: #b9bcbf;
+}
+.bio-links {
+    color: #b9bcbf;
+    text-decoration: none;
+}
+.bio-links:hover {
+    color: white;
+}
 /* Footer */
 
 .footer {
@@ -133,6 +206,7 @@ main {
     -moz-box-shadow: 0px -17px 15px 9px #000000;
     box-shadow: 0px -17px 15px 9px #000000;
     font-size: 15px;
+    border-top: #ffffff42 0.5px solid;
 
 }
 

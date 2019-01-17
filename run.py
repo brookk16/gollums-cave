@@ -18,11 +18,6 @@ high_score = {
 wrong_answers = []
 
 
-
-
-    
-
-
 @app.route("/")
 def index():
     return render_template("index.html")
@@ -71,10 +66,12 @@ def riddle():
             session["score"] += 1
             
             
-            if session["riddle_num"] < len(RIDDLES) and session["wrong_answers"]:
+            if session["riddle_num"] < len(RIDDLES): 
                 flash("Correct answer, %s! Your score is %s." % (
                       session["player"], session["score"]))
                 session["wrong_answers"]=[]
+                session["riddle_attempts"] = MAX_ATTEMPTS
+                
                 
             
             else:

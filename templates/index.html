@@ -1,31 +1,40 @@
-{% extends 'base.html' %} {% block content %}
+{% extends 'base.html' %} {% block gollum %}
 
-
-<div class="flex-container">
-
-
-    <div class="welcome-message-box">
-        <p class="welcome-message">“If precious asks, and it doesn’t answer, we eats it, my preciousss. If it asks us, and we doesn’t answer, then we does what it wants, eh? We shows it the way out, yes!” </p>
-        <p class="welcome-message">Tells us your name, and we can start!</p>
+<div class="col-4">
+    <div class="col-4 positioning-of-gollum">
+        <img class="golum-styling" src="static/img/index_gollum.png" alt="Gollum from Lord of the rings">
     </div>
+</div>
 
 
+{% endblock %} {% block content %}
+
+<div class="col-7">
+    <div class="flex-container">
 
 
-    <form method="POST" action="{{ url_for('new_game') }}" class="start-game-box justify-content-md-left">
-        <div class="input-group mb-3 col col-lg-8">
-            <div class="input-group-prepend">
-               
-            </div>
-            <input type="text" class="form-control" name="player">
-            <div class="input-group-append">
-                <input class="btn start-button" type="submit" value="Start the game">
-            </div>
+        <div class="welcome-message-box">
+            <p class="welcome-message">“If precious asks, and it doesn’t answer, we eats it, my preciousss. If it asks us, and we doesn’t answer, then we does what it wants, eh? We shows it the way out, yes!” </p>
+            <p class="welcome-message">Tells us your name, and we can start!</p>
         </div>
-    </form>
+
+
+
+
+        <form method="POST" action="{{ url_for('new_game') }}" class="start-game-box justify-content-md-left">
+            <div class="input-group mb-3 col col-lg-8">
+                <div class="input-group-prepend">
+
+                </div>
+                <input type="text" class="form-control" name="player">
+                <div class="input-group-append">
+                    <input class="btn start-button" type="submit" value="Start the game">
+                </div>
+            </div>
+        </form>
+
+    </div>
+</div>
 
 </div>
-</div>
-
-
 {% endblock %}

@@ -1,15 +1,68 @@
-{% extends 'base.html' %}
+{% extends 'base.html' %} {% block content %}
+<div class="container-flex">
+    <div class="row">
+        <div class="col-12 summary-box">
+            <h2 class="title">Summary</h2>
+            <p class="summary-text">After many adventures in many lands, Bilbo and companies progress is halted when they reach the Misty Mountains, and are captured by goblins. The dwarves and Gandalf escape, but Bilbo is accidentally left behind. Crawling around in the dark,
+                he finds a golden ring and pockets it. As he wanders through the goblins' tunnels, looking for a way out, he encounters a small, slimy creature called Gollum. Gollum challenges Bilbo to a riddle competition: if Gollum loses, he will show
+                Bilbo the way out, but if Bilbo loses, Gollum will eat him. At his wits' end, Bilbo puts his hands in his pockets, comes across the ring, and wonders aloud, "What have I got in my pocket?" Gollum cannot guess the answer and agrees to show
+                Bilbo the way out. But the ring that Bilbo found belongs to Gollum, and Gollum guesses that Bilbo has it. Bilbo runs away, slipping the ring on his finger. Gollum races straight past him and inadvertently guides Bilbo to the gate. Bilbo
+                escapes, and finds the dwarves, but decides to keep the story of his adventure to himself.
+            </p>
 
-{% block content %}
-    <form method="POST" action="{{ url_for('new_game') }}" class="justify-content-md-left">
-        <div class="input-group mb-3 col col-lg-8">
-            <div class="input-group-prepend">
-                <span class="input-group-text" id="basic-addon1">What's your name?</span>
-            </div>
-            <input type="text" class="form-control" name="player">
-            <div class="input-group-append">
-                <input class="btn btn-primary" type="submit" value="Start the game">
-            </div>
         </div>
-    </form>
+
+    </div>
+    <div class="spacer">
+
+    </div>
+    <h2 class="title">Characters</h2>
+    <div class="row character-bio">
+
+        <div class="col-5">
+            <img class="bio-pic" src="static/img/gollum_bio.jpeg" alt="Gollum from The Hobbit movie">
+        </div>
+
+        <div class="col-6 float-right character-text-spacing">
+            <h5 class="character-title">Gollum</h5>
+            <p class="quote">"My precious!" <br>— Gollum referring to the Ring</p>
+            <p class="bio-text">Gollum, originally known as Sméagol (or Trahald), was at first a Stoor, one of the three early Hobbit-types. The name Gollum was derived from the sound of his disgusting gurgling, choking cough. His birth can be estimated to have happened
+                in the year TA 2430. His death date is given as March 25, 3019. His life was extended far beyond its natural limits by the effects of possessing the One Ring. At the time of his death, Sméagol was about 589 years old, a remarkable age
+                for a creature that was once a Hobbit, but he had been deformed and twisted in both body and mind by the corruption of the Ring. His chief desire was to possess the Ring that had enslaved him, and he pursued it for many years after Bilbo
+                Baggins found it while walking in the Misty Mountains in the book The Hobbit. In the movies, he was a deuteragonist-turned-secondary antagonist.
+            </p>
+        </div>
+    </div>
+    <div class="spacer">
+
+    </div>
+    <div class="row character-bio">
+
+        <div class="col-6 float-left character-text-spacing">
+            <h5 class="character-title">Bilbo Baggins</h5>
+            <p class="quote">"If more of us cared about food and home above gold, this world would be a merrier place."<br> —Thorin, to (and about) Bilbo
+            </p>
+            <p class="bio-text">Gollum, originally known as Sméagol (or Trahald), was at first a Stoor, one of the three early Hobbit-types. The name Gollum was derived from the sound of his disgusting gurgling, choking cough. His birth can be estimated to have happened
+                in the year TA 2430. His death date is given as March 25, 3019. His life was extended far beyond its natural limits by the effects of possessing the One Ring. At the time of his death, Sméagol was about 589 years old, a remarkable age
+                for a creature that was once a Hobbit, but he had been deformed and twisted in both body and mind by the corruption of the Ring. His chief desire was to possess the Ring that had enslaved him, and he pursued it for many years after Bilbo
+                Baggins found it while walking in the Misty Mountains in the book The Hobbit. In the movies, he was a deuteragonist-turned-secondary antagonist.
+            </p>
+        </div>
+        <div class="col-4">
+            <img class="bio-pic" src="static/img/bilbo_bio.jpg" alt="Bilbo from The Hobbit movie">
+        </div>
+    </div>
+    <div class="spacer">
+
+    </div>
+    <div>
+        <ul>
+            <h5 class="bio-links-title" >Links to full biographies</h5>
+            <li><a class="bio-links" href="">The Hobbit</a></li>
+            <li><a class="bio-links" href="">Gollum</a></li>
+            <li><a class="bio-links" href="">Bilbo Baggins</a></li>
+        </ul>
+    </div>
+
+</div>
 {% endblock %}
