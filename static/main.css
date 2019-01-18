@@ -35,7 +35,7 @@ main {
 .nav-font-styling {
     font-family: 'Ringbearer', Helvetica, Arial, sans-serif;
     text-decoration: none;
-    color: white;
+    color: #FFDF00;
 
 
 }
@@ -58,7 +58,7 @@ main {
     font-family: 'Bilbo', Helvetica, Arial, sans-serif;
     font-size: 45px;
     text-decoration: none;
-    color: white;
+    color: #FFDF00;
     margin-top: 5px;
     padding: 0px;
 
@@ -130,12 +130,17 @@ main {
 
 /* About */
 
+#course_summary {
+   background-color: grey;
+   
+}
 .summary-text {
     color: white;
     text-align: center;
     margin: 50px 67px;
     font-size: 18px;
     font-family: 'Ringbearer', Helvetica, Arial, sans-serif;
+    
 }
 
 .character-bio {
@@ -158,7 +163,8 @@ main {
 }
 
 .summary-box {
-    background-color: #000000ad;
+    
+    
 
 }
 

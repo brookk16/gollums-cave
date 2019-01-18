@@ -6,7 +6,9 @@ from flask import (
 app = Flask(__name__)
 app.secret_key = os.getenv("SECRET", "olorin")
 
-MAX_ATTEMPTS = 3
+""" player always gets +1 of this number because of the changes i made to include displaying wrong guesses """
+
+MAX_ATTEMPTS = 2  
 with open("data/riddles.json") as riddle_file:
     RIDDLES = json.load(riddle_file)
 
@@ -97,7 +99,7 @@ def riddle():
             session["wrong_answers"].append(answer)
             
             flash("Wrong answer, %s. You have %s attempts left." % (
-            session["player"], session["riddle_attempts"]))
+            session["player"], session["riddle_attempts"]+1))
              
             
             
