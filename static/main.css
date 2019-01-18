@@ -106,6 +106,7 @@ main {
     color: white;
     font-family: 'Bilbo', Helvetica, Arial, sans-serif;
     font-size: 33px;
+    letter-spacing: 3px;
 }
 
 .start-game-box {
@@ -122,32 +123,67 @@ main {
 
 .question {
     color: white;
+    -webkit-box-shadow: -1px 1px 5px 9px rgba(0, 0, 0, 0.75);
+    -moz-box-shadow: -1px 1px 5px 9px rgba(0, 0, 0, 0.75);
+    box-shadow: -1px 1px 5px 9px rgba(0, 0, 0, 0.75);
+    box-sizing: border-box;
+    padding: 10px;
+
 }
+
+
 
 #wrong-guesss {
     color: white;
 }
 
+.ask-question-box {
+    margin: 136px 0px 50px 0px;
+    color: white;
+    font-family: 'Bilbo', Helvetica, Arial, sans-serif;
+    letter-spacing: 3px;
+    font-size: 22px;
+
+}
+
+.wrong-guesss {
+    color: white;
+    font-family: 'Ringbearer', Helvetica, Arial, sans-serif;
+    margin-top: 30px;
+}
+
+.wrong-guess {
+    color: white;
+    font-family: 'Ringbearer', Helvetica, Arial, sans-serif;
+}
+
+
 /* About */
 
 #course_summary {
-   background-color: grey;
-   
+    background-color: white;
+    border: 2px grey solid;
+    color: black;
+    margin: 20px;
+    padding: 10px;
+
 }
+
 .summary-text {
     color: white;
     text-align: center;
     margin: 50px 67px;
     font-size: 18px;
     font-family: 'Ringbearer', Helvetica, Arial, sans-serif;
-    
+
 }
 
 .character-bio {
     margin: 20px 0px;
 
-    
+
 }
+
 .title {
     color: white;
     text-align: center;
@@ -159,14 +195,9 @@ main {
     color: white;
     font-family: 'Ringbearer', Helvetica, Arial, sans-serif;
     margin: 20px 0px;
-    
-}
-
-.summary-box {
-    
-    
 
 }
+
 
 .bio-pic {
     margin: 28px 0px 0px 46px;
@@ -183,7 +214,7 @@ main {
 
 .bio-text {
     color: white;
-    
+
 }
 
 .quote {
@@ -194,16 +225,20 @@ main {
 .character-text-spacing {
     margin: 0px 0px 0px 40px;
 }
-.bio-links-title{
+
+.bio-links-title {
     color: #b9bcbf;
 }
+
 .bio-links {
     color: #b9bcbf;
     text-decoration: none;
 }
+
 .bio-links:hover {
     color: white;
 }
+
 /* Footer */
 
 .footer {

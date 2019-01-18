@@ -1,37 +1,50 @@
 {% extends 'base.html' %} {% block gollum %}
+{% if attempts > 0 %}
 <div class="col-4">
     <div class="col-4 positioning-of-gollum">
         <img class="golum-styling" src="static/img/gollum_happy.png" alt="Gollum from Lord of the rings">
     </div>
 </div>
+
+{% else %}
+
+<div class="col-4">
+    <div class="col-4 positioning-of-gollum">
+        <img class="golum-styling" src="static/img/gollum_angry.png" alt="Gollum from Lord of the rings">
+    </div>
+</div>
+{% endif %}
 {% endblock %} {% block content %}
 <div class="col-8">
-    <strong class="mr-2 question">Question {{ riddle_num + 1 }}:</strong>
-    <em class="question">{{ question }}</em>
-
-    <form method="POST" class="row">
-        <div class="input-group mb-3 col col-lg-8">
-            <div class="input-group-prepend">
-                <span class="input-group-text" id="basic-addon1">Your answer:</span>
-            </div>
-            <input type="text" class="form-control" name="answer">
-            <div class="input-group-append">
-                <input class="btn btn-primary" type="submit" value="Answer the riddle">
-            </div>
+    <div class="row ask-question-box">
+        <div class="col-9 question">Question {{ riddle_num + 1 }}:
+            <em>{{ question }}</em>
         </div>
-    </form>
-
-    <div>
-
-        <ul id="wrong-guesss">
-            {% for answer in wrong_answers %}
-
-
-            <li name="wrong-answer">{{ answer }}</li>
-
-            {% endfor %}
+    </div>
+    <div class="row">
+        <div class="col-12">
+            <form method="POST" class="row">
+                <div class="input-group mb-3 col col-lg-8">
+                    <input type="text" class="form-control" name="answer" placeholder="What does it thinks the answer is, Precious?">
+                    <div class="input-group-append">
+                        <input class="btn start-button" type="submit" value="Answer the riddle">
+                    </div>
+                </div>
+            </form>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-12">
+            <h4 class="wrong-guesss">Wrong Guesses</h4>
+            <ul id="wrong-guess">
+                {% for answer in wrong_answers %}
+                <li class="wrong-guess" name="wrong-answer">{{ answer }}</li>
+                {% endfor %}
+            </ul>
+        </div>
     </div>
 
     {% endblock %}
-    </ul>
+
+
 </div>
