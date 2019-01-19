@@ -90,14 +90,21 @@ main {
     margin-top: 160px;
 }
 
+.messages-styling {
+    position: relative;
+    color: black;
+    font-family: 'Ringbearer', Helvetica, Arial, sans-serif;
+    top: 125px;
+    background-color: #ffe100;
+    
+}
+
 /* index */
 
 .welcome-message-box {
-    -webkit-box-shadow: -1px 1px 5px 9px rgba(0, 0, 0, 0.75);
-    -moz-box-shadow: -1px 1px 5px 9px rgba(0, 0, 0, 0.75);
-    box-shadow: -1px 1px 5px 9px rgba(0, 0, 0, 0.75);
     box-sizing: border-box;
     margin-top: 106px;
+    background-color: #0000008c;
 }
 
 .welcome-message {
@@ -123,19 +130,12 @@ main {
 
 .question {
     color: white;
-    -webkit-box-shadow: -1px 1px 5px 9px rgba(0, 0, 0, 0.75);
-    -moz-box-shadow: -1px 1px 5px 9px rgba(0, 0, 0, 0.75);
-    box-shadow: -1px 1px 5px 9px rgba(0, 0, 0, 0.75);
+    background-color: #0000008c;
     box-sizing: border-box;
     padding: 10px;
 
 }
 
-
-
-#wrong-guesss {
-    color: white;
-}
 
 .ask-question-box {
     margin: 136px 0px 50px 0px;
@@ -147,13 +147,13 @@ main {
 }
 
 .wrong-guesss {
-    color: white;
+    color: #ffe100;
     font-family: 'Ringbearer', Helvetica, Arial, sans-serif;
     margin-top: 30px;
 }
 
 .wrong-guess {
-    color: white;
+    color: #ffe100;
     font-family: 'Ringbearer', Helvetica, Arial, sans-serif;
 }
 
@@ -237,6 +237,13 @@ main {
 
 .bio-links:hover {
     color: white;
+}
+
+/* Highscores */
+
+.table-styling {
+    color: white;
+    background-color: red;
 }
 
 /* Footer */

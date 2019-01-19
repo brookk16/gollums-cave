@@ -1,5 +1,6 @@
 import json
 import os
+from datetime import datetime
 from flask import (
     Flask, session, render_template, flash, request, redirect, url_for)
 
@@ -12,13 +13,12 @@ MAX_ATTEMPTS = 2
 with open("data/riddles.json") as riddle_file:
     RIDDLES = json.load(riddle_file)
 
-high_score = {
-    "name": "",
-    "score": 0
-}
-
 wrong_answers = []
 
+high_score = {
+    "name": "nobody",
+    "score": 0
+}
 
 @app.route("/")
 def index():
@@ -32,6 +32,7 @@ def new_game():
     session["riddle_num"] = 0
     session["riddle_attempts"] = MAX_ATTEMPTS
     session["wrong_answers"] = wrong_answers
+     
     
  
     return redirect(url_for("riddle"))
@@ -74,10 +75,6 @@ def riddle():
                 session["wrong_answers"]=[]
                 session["riddle_attempts"] = MAX_ATTEMPTS
                 
-                
-            
-            else:
-                flash("Correct answer, %s!" % session["player"])
         
         elif not session["riddle_attempts"] and session["wrong_answers"]:
             session["riddle_num"] += 1
@@ -111,7 +108,7 @@ def riddle():
             high_score["score"] = session["score"]
             high_score["name"] = session["player"]
         
-        return render_template("game_over.html", player=session["player"],
+        return render_template("highscores.html", player=session["player"],
                                score=session["score"],
                                highscore=high_score["score"],
                                highscorer=high_score["name"])

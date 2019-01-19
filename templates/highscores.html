@@ -1,14 +1,38 @@
-{% extends 'base.html' %}
+{% extends 'base.html' %} {% block content %}
+<div class="col-12">
 
-{% block content %}
     <div class="alert alert-success" role="alert" class="row">
         Congratulations {{ player }}, you've completed the game! Your final score is {{ score }}
     </div>
     <div class="alert alert-success" role="alert" class="row">
         Current high score held by: {{ highscorer }} with a high score of {{ highscore }}
     </div>
-    <form method="POST" action="{{ url_for('new_game') }}" class="row">
-        <input type="hidden" name="player" value="{{ player }}">
-        <input type="submit" value="New game?" class="btn btn-primary">
-    </form>
+    <div class="row justify-content-center">
+        <div class="col-7 align-self-center">
+            <table class="table-styling">
+                <tr>
+                    <th class="table-title">Rank</th>
+                    <th class="table-title">Username</th>
+                    <th class="table-title">Time </th>
+                    <th class="table-title">Score</th>
+                </tr>
+                <tr>
+{% for score in scores %}
+                    <td class="table-value">{{ loop.index }}</td>
+                    <td class="table-value">{{ score.name }}</td>
+                    <td class="table-value">{{ score.timestamp }}</td>
+                    <td class="table-value">{{ score.score }}</td>
+{% endfor %}
+                </tr>
+            </table>
+        </div>
+    </div>
+    <div class="spacer"></div>
+    
+        <form method="POST" action="{{ url_for('new_game') }}" class="row">
+            <input type="hidden" name="player" value="{{ player }}">
+            <input type="submit" value="New game?" class="btn btn-primary">
+        </form>
+    
+</div>
 {% endblock %}

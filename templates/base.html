@@ -23,23 +23,19 @@
 
     <main>
         <div class="container-fluid">
-            <header>
-                {% with messages = get_flashed_messages() %} {% for message in messages %}
-                <div class="alert alert-warning" role="alert">{{ message }}</div>
-                {% endfor %} {% endwith %}
-            </header>
-            <main>
-                <div class="row h-100">
 
-                    {% block gollum %} {% endblock %}
-                    {% block content %}{% endblock %}
+            <div class="row h-100">
 
-                </div>
+                {% block gollum %} {% endblock %} 
+                
+                {% block content %}{% endblock %}
+
+            </div>
 
 
 
-        </div>
-        </main>
+
+
         </div>
     </main>
     <footer class="footer">
