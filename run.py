@@ -13,6 +13,9 @@ MAX_ATTEMPTS = 2
 with open("data/riddles.json") as riddle_file:
     RIDDLES = json.load(riddle_file)
 
+"""with open("data/highscore_board.json") as highscore_board_file:
+    HIGHSCORE_BOARD = json.load(highscore_board_file)""" 
+
 wrong_answers = []
 
 high_score = {
@@ -105,6 +108,12 @@ def riddle():
     if session["riddle_num"] >= len(RIDDLES):
         
         if session["score"] >= high_score["score"]:
+            
+            
+            
+            
+            
+            
             high_score["score"] = session["score"]
             high_score["name"] = session["player"]
         
