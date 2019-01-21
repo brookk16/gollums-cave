@@ -1,6 +1,6 @@
 {% extends 'base.html' %} 
 {% block gollum %} 
-<div class="col-4">
+<div class="col-4 hide">
 
 {% with messages = get_flashed_messages() %} {% for message in messages %}
 
@@ -32,17 +32,17 @@
 
 
 {% endblock %} {% block content %}
-<div class="col-7">
+<div class="col-xl-7 col-lg-7 col-md-7 col-sm-8 col-xs-12">
     <div class="row ask-question-box">
-        <div class="col-9 question">Question {{ riddle_num + 1 }}:
+        <div class="col-xl-9 col-lg-9 col-md-9 col-sm-10 col-xs-12 question">Question {{ riddle_num + 1 }}:
             <em>{{ question }}</em>
         </div>
     </div>
     <div class="row">
         <div class="col-12">
             <form method="POST" class="row">
-                <div class="input-group mb-3 col-lg-8">
-                    <input type="text" class="form-control" name="answer" autocomplete="off" placeholder="What does it thinks the answer is, Precious?">
+                <div class="input-group col-lg-8">
+                    <input type="text" class="form-control" name="answer" autocomplete="off" placeholder="What's the answer Precious?">
                     <div class="input-group-append">
                         <input class="btn start-button" type="submit" value="Answer the riddle">
                     </div>
