@@ -13,8 +13,43 @@ MAX_ATTEMPTS = 2
 with open("data/riddles.json") as riddle_file:
     RIDDLES = json.load(riddle_file)
 
-"""with open("data/highscore_board.json") as highscore_board_file:
-    HIGHSCORE_BOARD = json.load(highscore_board_file)""" 
+def write_to_leaderboard(player, score):
+    now = datetime.now().strftime("%H:%M:%S")
+    
+    with open('data/highscore_board.txt', 'a') as leaderboard:
+        leaderboard.write(str(player) + "\n" + str(score) + "\n")
+    leaderboard.close()
+        
+    
+
+def check_length_and_order():
+    players = []
+    scores = []
+    now = datetime.now().strftime("%H:%M:%S")
+    
+    with open('data/highscore_board.txt', 'r') as leaderboard:
+        lines = leaderboard.read().splitlines()
+    
+    for i, text in enumerate(lines):
+        if i%2 == 0:
+            players.append(text)
+        else:
+            scores.append(text)
+    
+    players_scores = zip(players, scores)
+    
+    sorted_highscores = sorted(players_scores, key=lambda tup: tup[1])
+    
+    print(sorted_highscores) 
+    """ Currently returning the sorted list of tuples (players_scores), next will need to figure out how to delete the entries > 11 and print to highscore board"""
+    
+    
+    
+
+    
+
+
+
 
 wrong_answers = []
 
@@ -107,13 +142,12 @@ def riddle():
 
     if session["riddle_num"] >= len(RIDDLES):
         
+        write_to_leaderboard(session["player"],session["score"])
+        check_length_and_order()
+        
+        
+        
         if session["score"] >= high_score["score"]:
-            
-            
-            
-            
-            
-            
             high_score["score"] = session["score"]
             high_score["name"] = session["player"]
         
