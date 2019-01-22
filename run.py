@@ -39,11 +39,12 @@ def check_length_and_order():
     players_scores = zip(players, scores)
     
     sorted_highscores = sorted(players_scores, key=lambda tup: tup[1])
+    """
+    return sorted_highscores  
+     
+     Currently returning the sorted list of tuples (players_scores), next will need to figure out how to delete the entries > 11 and print to highscore board"""
     
-    print(sorted_highscores) 
-    """ Currently returning the sorted list of tuples (players_scores), next will need to figure out how to delete the entries > 11 and print to highscore board"""
-    
-    
+
     
 
     
@@ -141,21 +142,29 @@ def riddle():
             
 
     if session["riddle_num"] >= len(RIDDLES):
-        
+        """
         write_to_leaderboard(session["player"],session["score"])
         check_length_and_order()
+        """
+        
         
         
         
         if session["score"] >= high_score["score"]:
             high_score["score"] = session["score"]
-            high_score["name"] = session["player"]
+            high_score["name"] = session["score"]
         
+    
+    flash("Your final score is %s, %s /n The current highscore is held by %s, with %s points" % (session["score"], session["score"], high_score["name"],high_score["score"]))
+        
+    """ add an if statement to riddle.html that only shows gollum/hides the ridddle and question input box, so that user cannot input anything else and break the code"""   
+        
+    """
         return render_template("highscores.html", player=session["player"],
                                score=session["score"],
                                highscore=high_score["score"],
                                highscorer=high_score["name"])
-
+    """
     new_riddle = RIDDLES[session["riddle_num"]]
     
     return render_template(
