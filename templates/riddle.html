@@ -1,16 +1,16 @@
 {% extends 'base.html' %} 
 {% block gollum %} 
-<div class="col-4 hide">
-
+<div class="col-xl-4 col-lg-4 col-md-4 col-sm-5 col-xl-12">
 {% with messages = get_flashed_messages() %} {% for message in messages %}
 
     <div class="row">
         <div class="col-12">
-            <div class="alert messages-styling" role="alert">{{ message }}</div>
+            <div class="messages-styling" role="alert">{{ message }}</div>
         </div>
     </div>
-    {% endfor %} {% endwith %} 
-    <div class="row">
+    {% endfor %} {% endwith %}
+ 
+    <div class="row hide">
     
     {% if attempts > 1 %}
     <div class="col-12">
@@ -44,7 +44,7 @@
                 <div class="input-group col-lg-8">
                     <input type="text" class="form-control" name="answer" autocomplete="off" placeholder="What's the answer Precious?">
                     <div class="input-group-append">
-                        <input class="btn start-button" type="submit" value="Answer the riddle">
+                        <input class="btn button" type="submit" value="Answer the riddle">
                     </div>
                 </div>
             </form>

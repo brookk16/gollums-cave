@@ -60,6 +60,10 @@ def new_game():
 def about():
     return render_template("about.html")
 
+@app.route("/game_over", methods=["GET"])
+def game_over():
+    return render_template("game_over.html", score=session["score"])
+
 @app.route("/highscores", methods=["GET","POST"])
 def highscores():
     

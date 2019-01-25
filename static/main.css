@@ -120,9 +120,17 @@ main {
     margin: 15px;
 }
 
-.start-button {
+.button {
     color: black;
     background-color: #b9bcbf;
+}
+
+.congratulations-message {
+    top: 0px;
+    color: black;
+    font-family: 'Ringbearer', Helvetica, Arial, sans-serif;
+    background-color: #ffe100;
+    max-width: 70%;
 
 }
 
@@ -243,10 +251,41 @@ main {
 
 .table-styling {
     color: white;
-    background-color: red;
+    background-color: grey;
+    border-radius: 5%;
+    margin: 65px 0px 0px 0px;
+
+
 }
 
+.table-title {
+    padding: 9px 0px 2px 12px;
+    color: #ffe100;
+}
 
+.table-value {
+    padding: 8px 20px 9px 26px;
+    width: 124px;
+}
+
+#width-limit {
+    position: absolute;
+    top: 35px;
+}
+
+#new-game-spacing {
+    margin: 50px 0px 0px 0px;
+    position: absolute;
+    top: 335px;
+    
+    
+}
+
+/* Game over */
+
+.margin-top {
+    margin-top: 22px;
+}
 
 /* Footer */
 
@@ -292,6 +331,12 @@ main {
 
 /* Media queries */
 
+@media screen and (min-width: 1400px) {
+    #new-game-spacing {
+        
+    }
+}
+
 @media screen and (max-width: 1000px) {
     .bio-pic {
         margin: 0px;
@@ -301,6 +346,7 @@ main {
         margin: 5px 5px;
         font-size: 14px;
     }
+
 }
 
 @media screen and (max-width: 900px) {
@@ -335,4 +381,9 @@ main {
         font-size: 14px;
         text-align: right;
     }
+
+    .new-game-btn {
+        margin: 0px;
+    }
+
 }

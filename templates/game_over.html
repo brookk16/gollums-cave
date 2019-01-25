@@ -1,12 +1,21 @@
-{% extends 'base.html' %}
-
-{% block content %}
-    <div class="alert alert-success" role="alert" class="row">
-        Congratulations {{ player }}, you've completed the game! Your final score is {{ score }}
+{% extends 'base.html' %} {% block content %}
+<div class="col-12">
+    <div class="row justify-content-center congratulations-message" role="alert">
+        Congratulations {{ player }}, you've completed the game! Your final score is {{ score }}. Check the highscore board to see how where you are
     </div>
-   
-    <form method="POST" action="{{ url_for('new_game') }}" class="row">
-        <input type="hidden" name="player" value="{{ player }}">
-        <input type="submit" value="New game?" class="btn btn-primary">
-    </form>
+
+    <div class="row justify-content-center game_over_img">
+        {% if score > 3%}
+        <img src="static/img/bilbos_hand.png" alt="Bilbo's hand hold the one ring"> {% else %}
+        <imgsrc="static/img/gollum_scary.png" alt="Gollum coming towards the player">
+            {% endif %}
+    </div>
+
+    <div class="row justify-content-center margin-top">
+        <form method="POST" action="{{ url_for('new_game') }}">
+            <input type="hidden" name="player" value="{{ player }}">
+            <input type="submit" value="New game?" class="btn button">
+        </form>
+    </div>
+</div>
 {% endblock %}

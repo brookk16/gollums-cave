@@ -2,7 +2,7 @@
 <div class="col-12">
 
     <div class="row justify-content-center">
-        <div class="col-7 align-self-center">
+        <div id="width-limit">
             <table class="table-styling">
                 <tr>
                     <th class="table-title">Rank</th>
@@ -10,7 +10,7 @@
                     <th class="table-title">Score</th>
                 </tr>
 
-                {% for score in highscore_board %} 
+                {% for score in highscore_board %}
                 <tr>
                     <td class="table-value">{{ loop.index }}</td>
                     <td class="table-value">{{ score[0] }}</td>
@@ -20,13 +20,14 @@
 
             </table>
         </div>
+        <div id="new-game-spacing">
+            <form method=" POST " action="{{ url_for( 'new_game') }} ">
+                <input type="submit " value="New game? " class="btn button">
+            </form>
+        </div>
     </div>
-    <div class="spacer"></div>
 
-    <form method="POST" action="{{ url_for('new_game') }}" class="row">
-        <input type="hidden" name="player" value="{{ player }}">
-        <input type="submit" value="New game?" class="btn btn-primary">
-    </form>
 
 </div>
+
 {% endblock %}
