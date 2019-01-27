@@ -1,38 +1,39 @@
 {% extends 'base.html' %} {% block gollum %}
 
+<!-- Displays a picture of Gollum -->
+
 <div class="col-4 hide">
     <div class="positioning-of-gollum">
-        <img class="golum-styling" src="static/img/gollum_happy.png" alt="Gollum from Lord of the rings">
+        <img class="golum-styling" src="static/img/gollum_happy.webp" alt="Gollum from Lord of the rings">
     </div>
 </div>
 
-
 {% endblock %} {% block content %}
 
+<!-- Displays a welcome message, a prompt for the user to submit a username and a user input box. Upon entering a username, the user is redirected to the rules page -->
+
 <div class="col-xl-7 col-lg-7 col-md-7 col-sm-8 col-xs-12">
-
-
-
     <div class="welcome-message-box">
         <p class="welcome-message">“If precious asks, and it doesn’t answer, we eats it, my preciousss. If it asks us, and we doesn’t answer, then we does what it wants, eh? We shows it the way out, yes!” </p>
         <p class="welcome-message">Tells us your name, and we can start!</p>
     </div>
-
-
-
-
     <form method="POST" action="{{ url_for('new_game') }}" class="start-game-box">
         <div class="input-group">
-            <div class="input-group-prepend">
-
-            </div>
-            <input type="text" autocomplete="off" class="form-control" name="player" placeholder="Username">
+            <div class="input-group-prepend"></div>
+            <input type="text" value="username" autocomplete="off" class="form-control" name="player" placeholder="Username">
             <div class="input-group-append">
                 <input class="btn button" type="submit" value="Start the game">
             </div>
         </div>
     </form>
-
+    <div class="rules-styling">
+        <h4>Rules</h4>
+        <ul>
+            <li>To win beat Gollum in a battle of riddles, get more than 3 out of 5 to win!</li>
+            <li>You will get 3 attempts per riddle, then the game will move on</li>
+            <li>All correct answers are: all lower case, one word and singular</li>
+        </ul>
+    </div>
 </div>
 
 {% endblock %}

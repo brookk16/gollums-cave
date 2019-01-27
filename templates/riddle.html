@@ -1,37 +1,48 @@
-{% extends 'base.html' %} 
-{% block gollum %} 
-<div class="col-xl-4 col-lg-4 col-md-4 col-sm-5 col-xl-12">
-{% with messages = get_flashed_messages() %} {% for message in messages %}
+{% extends 'base.html' %} {% block gollum %}
 
+<!-- This area displays gollum and the messages on screen sizes > 600px-->
+
+<div class="col-xl-4 col-lg-4 col-md-4 col-sm-5 col-xl-12">
+
+    {% with messages = get_flashed_messages() %} {% for message in messages %}
+    
     <div class="row">
         <div class="col-12">
             <div class="messages-styling" role="alert">{{ message }}</div>
         </div>
     </div>
-    {% endfor %} {% endwith %}
- 
-    <div class="row hide">
     
-    {% if attempts > 1 %}
-    <div class="col-12">
-        <div class="positioning-of-gollum">
-            <img class="golum-styling" src="static/img/gollum_happy.png" alt="Gollum from the movie Lord of the rings">
+    {% endfor %} {% endwith %}
+    
+    <div class="row hide">
+ 
+ <!-- If statement controls whether happy Gollum should be displayed (base image), 
+ or if angry Gollum should be displayed (incorrect answer) -->     
+        
+        {% if attempts > 1 %}
+        
+        <div class="col-12">
+            <div class="positioning-of-gollum">
+                <img class="golum-styling" src="static/img/gollum_happy.webp" alt="Gollum from the movie Lord of the rings">
+            </div>
         </div>
-    </div>
-
-    {% else %}
-
-    <div class="col-12">
-        <div class="positioning-of-gollum">
-            <img class="golum-styling" src="static/img/angry_gollum.png" alt="Gollum from the movie Lord of the rings">
+        
+        {% else %}
+        
+        <div class="col-12">
+            <div class="positioning-of-gollum">
+                <img class="golum-styling" src="static/img/angry_gollum.webp" alt="Gollum from the movie Lord of the rings">
+            </div>
         </div>
-    </div>
-    {% endif %}
+        
+        {% endif %}
     </div>
 </div>
 
-
 {% endblock %} {% block content %}
+
+<!-- This area displays the questions, riddles, user input and the messages (on screen sizes < 600px) -->
+
 <div class="col-xl-7 col-lg-7 col-md-7 col-sm-7 col-xs-12 adds-width">
     <div class="row ask-question-box">
         <div class="col-xl-9 col-lg-9 col-md-9 col-sm-10 col-xs-12 question">Question {{ riddle_num + 1 }}:
@@ -54,8 +65,13 @@
         <div class="col-12">
             <h4 class="wrong-guesss">Wrong Guesses</h4>
             <ul>
+               
+               <!-- Displays wrong answer attempts -->
+               
                 {% for answer in wrong_answers %}
+               
                 <li class="wrong-guess" name="wrong-answer">{{ answer }}</li>
+               
                 {% endfor %}
             </ul>
         </div>

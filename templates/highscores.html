@@ -1,6 +1,8 @@
 {% extends 'base.html' %} {% block content %}
-<div class="col-12">
 
+<!-- Displays the highscore table -->
+
+<div class="col-12">
     <div class="row justify-content-center">
         <div id="width-limit">
             <table class="table-styling">
@@ -10,12 +12,18 @@
                     <th class="table-title">Score</th>
                 </tr>
 
+<!-- Each score username submitted by the player, and their score is displayed here. 
+Note: as this app uses session variables to store player usernames and scores, 
+this highscore board will be empty the first time visiting, and will clear when you close the browser -->
+                
                 {% for score in highscore_board %}
+                
                 <tr>
                     <td class="table-value">{{ loop.index }}</td>
                     <td class="table-value">{{ score[0] }}</td>
                     <td class="table-value">{{ score[1] }}</td>
                 </tr>
+                
                 {% endfor %}
 
             </table>

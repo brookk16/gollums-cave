@@ -10,6 +10,7 @@ app.secret_key = os.getenv("SECRET", "olorin")
 """ player always gets +1 of this number because of the changes i made to include displaying wrong guesses """
 
 MAX_ATTEMPTS = 2  
+
 with open("data/riddles.json") as riddle_file:
     RIDDLES = json.load(riddle_file)
 
@@ -59,6 +60,7 @@ def new_game():
 @app.route("/about", methods=["GET","POST"])
 def about():
     return render_template("about.html")
+
 
 @app.route("/game_over", methods=["GET"])
 def game_over():

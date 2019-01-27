@@ -10,7 +10,7 @@ html {
 }
 
 main {
-    background: url("img/index.jpg") no-repeat left top;
+    background: linear-gradient( rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5) ), url("img/index.webp") no-repeat left top;
     min-height: 685px;
     background-color: black;
 }
@@ -143,6 +143,11 @@ main {
     top: 122px;
 }
 
+.rules-styling {
+    font-family: 'Ringbearer', Helvetica, Arial, sans-serif;
+    color: #ffe100;
+    margin-top: 67px;
+}
 /* Riddle */
 
 .question {

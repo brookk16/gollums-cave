@@ -1,16 +1,17 @@
 {% extends 'base.html' %} {% block content %}
+
+<!-- Displays the information concerning the projects purpose, 
+the story summary for the encoutner between Gollum and Bilbo Baggins, 
+along with a short summary fo each character -->
+
 <div class="container-flex">
     <div class="row">
         <div class="col-12 summary-box">
-
             <p id="course_summary" class="summary-text">
-                This is a riddle game based on the encounter between Gollum and Bilbo Baggins, in "The Hobbit" by J.R.R. Tolkien. 
-                This is the 3rd milestone project for the code institute's Fullstack Web Developer course, designed to showcase skills in Python and flask. 
+                This is a riddle game based on the encounter between Gollum and Bilbo Baggins, in "The Hobbit" by J.R.R. Tolkien. This is the 3rd milestone project for the code institute's Fullstack Web Developer course, designed to showcase skills in Python and flask.
                 The link for the repository containing the files for this porject can be found below.
             </p>
-
         </div>
-
     </div>
     <div class="row">
         <div class="col-12 summary-box">
@@ -20,22 +21,16 @@
                 Bilbo the way out, but if Bilbo loses, Gollum will eat him. At his wits' end, Bilbo puts his hands in his pockets, comes across the ring, and wonders aloud, "What have I got in my pocket?" Gollum cannot guess the answer and agrees to show
                 Bilbo the way out. But the ring that Bilbo found belongs to Gollum, and Gollum guesses that Bilbo has it. Bilbo runs away, slipping the ring on his finger. Gollum races straight past him and inadvertently guides Bilbo to the gate. Bilbo
                 escapes, and finds the dwarves, but decides to keep the story of his adventure to himself.
-
             </p>
-
         </div>
-
     </div>
     <div class="spacer">
-
     </div>
     <h2 class="title">Characters</h2>
     <div class="row character-bio">
-
         <div class="col-5">
-            <img class="bio-pic" src="static/img/gollum_bio.jpeg" alt="Gollum from The Hobbit movie">
+            <img class="bio-pic" src="static/img/gollum_bio.webp" alt="Gollum from The Hobbit movie">
         </div>
-
         <div class="col-6 float-right character-text-styling">
             <h5 class="character-title">Gollum</h5>
             <p class="quote">"My precious!" <br>— Gollum referring to the Ring</p>
@@ -47,10 +42,8 @@
         </div>
     </div>
     <div class="spacer">
-
     </div>
     <div class="row character-bio">
-
         <div class="col-6 float-left character-text-styling">
             <h5 class="character-title">Bilbo Baggins</h5>
             <p class="quote">"If more of us cared about food and home above gold, this world would be a merrier place."<br> —Thorin, to (and about) Bilbo
@@ -62,11 +55,10 @@
             </p>
         </div>
         <div class="col-4">
-            <img class="bio-pic" src="static/img/bilbo_bio.jpg" alt="Bilbo from The Hobbit movie">
+            <img class="bio-pic" src="static/img/bilbo_bio.webp" alt="Bilbo from The Hobbit movie">
         </div>
     </div>
     <div class="spacer">
-
     </div>
     <div>
         <ul>
@@ -76,6 +68,6 @@
             <li><a class="bio-links" href="http://lotr.wikia.com/wiki/Bilbo_Baggins">Bilbo Baggins</a></li>
         </ul>
     </div>
-
 </div>
+
 {% endblock %}
