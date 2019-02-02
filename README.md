@@ -1,24 +1,35 @@
 # Gollum's Cave
 
+This is a python3 and Flask riddle game app based on the encounter bewteen the creature Gollum, and Bilbo Baggins the hero of J.R.R Tolkien's "The Hobbit".
 
-One or two paragraphs providing an overview of your project.
+This is the 3rd milestone project, required for completing the code institute's full stack web development course.
 
-Essentially, this part is your sales pitch.
+## User experience 
 
-UX
+This website is designed for fans of J.R.R Tokien's work (i.e: author of The hobbit, Lord of The Rings, The Silmarillion, e.t.c) to live through Bilbo's meeting with Gollum. Just as in the book, players will attempt to escape from Gollum by answering his riddles correctly. The aim of this project was to create a flask based riddle game, to showcase skills in the use of Python3, flask and front-end design.
 
-Use this section to provide insight into your UX process, focusing on who this website is for, what it is that they want to achieve and how your project is the best way to help them achieve these things.
 
-In particular, as part of this section we recommend that you provide a list of User Stories, with the following general structure:
+Below you can read some of the user stories:
 
-As a user type, I want to perform an action, so that I can achieve a goal.
-This section is also where you would share links to any wireframes, mockups, diagrams etc. that you created as part of the design process. These files should themselves either be included in the project itself (in an separate directory), or just hosted elsewhere online and can be in any format that is viewable inside the browser.
+* As a user, I want to play a riddle game that allows me to compete with friends.
+* As a user who doesn't know about the background of the story, I want to be able to learn more about it.
+* As a fan of The Hobbit, I want the game to feel like being in the cave under the Misty Mountains.
 
-Features
+Below you can see the wireframes for each of the site's pages<a name="wireframes"></a>:
 
-In this section, you should go over the different parts of your project, and describe each in a sentence or so.
 
-Existing Features
+## Features
+
+The main feature of this application is the riddle game. The game is simple: players will be shown 5 riddles and must answer more than 3 correctly to win. Players will be given 3 attempts per riddle, then the player looses the opportunity to get that point and the next riddle is displayed. After all riddles have been displayed (and responded to) the player's score and username will be submitted to the highscore board. All correct answers should be: all lowercase, one word and singular (i.e: not plural)
+
+The layout for each page can be seen [above](#wireframes) in the wireframes.
+
+Below you can find a summary of a player's game: 
+
+* Once the user has read the welcome message and the rules, they can submit a username to start. 
+* They will then be taken to the riddle page.
+
+Once their username has been entered, 
 
 Feature 1 - allows users X to achieve Y, by having them fill out Z
 ...
@@ -29,13 +40,15 @@ In addition, you may also use this section to discuss plans for additional featu
 Features Left to Implement
 
 Another feature idea
-Technologies Used
+
+## Technologies Used
 
 In this section, you should mention all of the languages, frameworks, libraries, and any other tools that you have used to construct this project. For each, provide its name, a link to its official site and a short sentence of why it was used.
 
 JQuery
 The project uses JQuery to simplify DOM manipulation.
-Testing
+
+## Testing
 
 In this section, you need to convince the assessor that you have conducted enough testing to legitimately believe that the site works well. Essentially, in this part you will want to go over all of your user stories from the UX section and ensure that they all work as intended, with the project providing an easy and straightforward way for the users to achieve their goals.
 
@@ -54,7 +67,7 @@ You should also mention in this section any interesting bugs or problems you dis
 
 If this section grows too long, you may want to split it off into a separate file and link to it from here.
 
-Deployment
+## Deployment
 
 This section should describe the process you went through to deploy the project to a hosting platform (e.g. GitHub Pages or Heroku).
 
@@ -65,14 +78,15 @@ Different configuration files?
 Separate git branch?
 In addition, if it is not obvious, you should also describe how to run your code locally.
 
-Credits
+## Credits
 
-Content
+## Content
 
 The text for section Y was copied from the Wikipedia article Z
 Media
 
 The photos used in this site were obtained from ...
-Acknowledgements
+
+## Acknowledgements
 
 I received inspiration for this project from X

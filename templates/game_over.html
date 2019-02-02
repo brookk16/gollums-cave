@@ -11,8 +11,8 @@ along with a button to try the game again  -->
     </div>
     <div class="row justify-content-center game_over_img">
         {% if score > 3%}
-        <img src="static/img/bilbos_hand.webp" alt="Bilbo's hand hold the one ring"> {% else %}
-        <img src="static/img/gollum_scary.webp" class="move-to-bottom" alt="Gollum coming towards the player"> {% endif %}
+        <img src="static/img/the_ring.png" alt="Bilbo's hand hold the one ring"> {% else %}
+        <img src="static/img/gollum_scary.png" class="move-to-bottom" alt="Gollum coming towards the player"> {% endif %}
     </div>
     <div class="row justify-content-center margin-top">
         <form method="POST" action="{{ url_for('new_game') }}">
