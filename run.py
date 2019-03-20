@@ -41,7 +41,6 @@ def check_length_and_order():
     
     return usernames_and_scores
     
-
 @app.route("/")
 def index():
     return render_template("index.html")

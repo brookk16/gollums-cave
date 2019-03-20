@@ -15,78 +15,128 @@ Below you can read some of the user stories:
 * As a user who doesn't know about the background of the story, I want to be able to learn more about it.
 * As a fan of The Hobbit, I want the game to feel like being in the cave under the Misty Mountains.
 
-Below you can see the wireframes for each of the site's pages<a name="wireframes"></a>:
+Below you can see the wireframes:
 
 
 ## Features
 
-The main feature of this application is the riddle game. The game is simple: players will be shown 5 riddles and must answer more than 3 correctly to win. Players will be given 3 attempts per riddle, then the player looses the opportunity to get that point and the next riddle is displayed. After all riddles have been displayed (and responded to) the player's score and username will be submitted to the highscore board. All correct answers should be: all lowercase, one word and singular (i.e: not plural)
+The main feature of this application is the riddle game. The game is simple: players will be shown 5 riddles and must answer more than 3 correctly to win. Players will be given 3 attempts per riddle, then the player loses the opportunity to get that point and the next riddle is displayed. After all riddles have been  responded to the player's score and username will be submitted to the highscore board. 
+All correct answers should be: all lowercase, one word and singular (i.e: non plural)
 
 The layout for each page can be seen [above](#wireframes) in the wireframes.
 
 Below you can find a summary of a player's game: 
 
-* Once the user has read the welcome message and the rules, they can submit a username to start. 
-* They will then be taken to the riddle page.
+1. Once the user has read the welcome message and the rules, they can submit a username to start. 
+2. They will then be taken to the riddle page, where each riddle is displayed
+3. Players answer the riddle by typing their answer in the box (below the riddle): 
+   * **If correct**: The gollum picture remains the same and a message appears ("Correct answer x. Your score is x")
+   * **If incorrect**: A menacing picture of Gollum is displayed, your incorrect guess is displayed below the riddle input, you loose one of your 3 attempts and a message appears ("Wrong answerx. You have x remaining attempts left")
+   * If the player looses all their 3 guesses, a message is displayed ("Wrong answer, x. Better luck with this riddle:") and the next riddle is shown
+4. When all 5 riddles have been answered, the player is taken to a new page where a congratulations message is shown ("Congratulations x, you've completed the game! Your final score is x. Check the highscore board to see where you are"). 
+   * If the player scored more than 3: you escaped with the ring (so a picture of the one ring is displayed)
+   * If the player scored 3 or less: you were captured/eaten by Gollum (so an excited picture of Gollum is displayed)
+     
+Players can then view the highscore board by clicking the link in the head navigation bar. Highscores are displayed highest to lowest, and newest to oldest. Thus if 2 players score 5, the last one to submit their score would be displayed above the other.
 
-Once their username has been entered, 
-
-Feature 1 - allows users X to achieve Y, by having them fill out Z
-...
-For some/all of your features, you may choose to reference the specific project files that implement them, although this is entirely optional.
-
-In addition, you may also use this section to discuss plans for additional features to be implemented in the future:
-
-Features Left to Implement
-
-Another feature idea
+> Note: This project does not use a database. The riddles and answers are stored in JSON file, but the players: username, final score, attempts, wrong-answers, e.t.c are stored as session variables. Therefore each time the broswer is closed the heighscore board will be emptied. 
+ 
 
 ## Technologies Used
 
-In this section, you should mention all of the languages, frameworks, libraries, and any other tools that you have used to construct this project. For each, provide its name, a link to its official site and a short sentence of why it was used.
+#### Front-end
 
-JQuery
-The project uses JQuery to simplify DOM manipulation.
+[Fonts awesome](https://fontawesome.com):
+* Provide the icons for the project 
+
+[Bootstrap](https://getbootstrap.com/docs/4.0/getting-started/introduction/) (4.0.0):
+* Provides a grid system to structure html code and basic css styling
+
+[JQuery](https://jquery.com)(3.2.1):
+* Provides DOM manipulation
+
+[Jinja2](http://jinja.pocoo.org/docs/2.10/) (2.10):
+* Used to render data/variables from the main app (run.py) 
+
+#### Back-end
+
+[Python3](https://www.python.org/download/releases/3.0/) (3.4.3):
+* Used to write the logic for this app (which can be seen in [run.py](https://github.com/brookk16/gollums-cave/blob/master/run.py))
+
+[Flask](http://flask.pocoo.org) (1.0.2):
+* Acts as a framework for the app
+
+
+The code editor used to create the project was [Cloud9](https://c9.io/signup).
+
+The project uses [Git](https://git-scm.com) for version control.
+
+For the additional tools and libraries needed to run the app, please refer to [requirements.txt](https://github.com/brookk16/Cuisine/blob/master/requirements.txt)
+
 
 ## Testing
 
-In this section, you need to convince the assessor that you have conducted enough testing to legitimately believe that the site works well. Essentially, in this part you will want to go over all of your user stories from the UX section and ensure that they all work as intended, with the project providing an easy and straightforward way for the users to achieve their goals.
 
-Whenever it is feasible, prefer to automate your tests, and if you've done so, provide a brief explanation of your approach, link to the test file(s) and explain how to run them.
+<details>
+<summary>User stories</summary>
+<br>
+User stories were checked to ensure this project meets their requests:
 
-For any scenarios that have not been automated, test the user stories manually and provide as much detail as is relevant. A particularly useful form for describing your testing process is via scenarios, such as:
+1. 
 
-Contact form:
-Go to the "Contact Us" page
-Try to submit the empty form and verify that an error message about the required fields appears
-Try to submit the form with an invalid email address and verify that a relevant error message appears
-Try to submit the form with all inputs valid and verify that a success message appears.
-In addition, you should mention in this section how your project looks and works on different browsers and screen sizes.
+</details>
 
-You should also mention in this section any interesting bugs or problems you discovered during your testing, even if you haven't addressed them yet.
+<details>
+<summary>Manual Testing</summary>
+<br>
+Manual testing was conducted on all main features of the app (features outlined [here](#features)).
 
-If this section grows too long, you may want to split it off into a separate file and link to it from here.
+> note: all tests begin by starting at the index/welcome page.
+
+> note: all tests are from the desktop perspective. For mobile, any references to a "nav bar", will require clicking on the "ring" symbol first to reveal the menu (screen sizes < 575px).
+
+
+</details>
+
+<details>
+<summary>Further testing and Issues</summary>
+<br>
+1. HTML and CSS code were both validated using W3C [HTMl](https://validator.w3.org) and [CSS](https://jigsaw.w3.org/css-validator/) validator.
+
+> note: HTML validation threw up errors, although these were concerning the Jinja2 templating language used in the html templates.
+
+
+Issues:
+
+
+* The author is not yet skilled in automated testing, and as such was unable to adhere to a test driven development approach. 
+</details>
+
 
 ## Deployment
 
-This section should describe the process you went through to deploy the project to a hosting platform (e.g. GitHub Pages or Heroku).
+The project is deployed on Heroku, and can be accessed [here]() 
 
-In particular, you should provide all details of the differences between the deployed version and the development version, if any, including:
+The Github for this project can be found [here](https://github.com/brookk16/gollums-cave). And can also be accessed via the github logo in the footer of the website.
 
-Different values for environment variables (Heroku Config Vars)?
-Different configuration files?
-Separate git branch?
-In addition, if it is not obvious, you should also describe how to run your code locally.
+Download the code from github, and place into your project. 
+
+Or clone the project into your working environment, using the command line:
+
+~~~
+git clone https://github.com/brookk16/gollums-cave
+~~~
+
+
 
 ## Credits
 
-## Content
+#### Content
 
-The text for section Y was copied from the Wikipedia article Z
-Media
+The fonts used were taken from [thehut](http://www.thehutt.de/tolkien/fonts.html)
 
-The photos used in this site were obtained from ...
+The photos used in this site were obtained from [Google images](https://www.google.com/search?rls=en&q=google+images+Gollum&tbm=isch&source=univ&client=safari&sa=X&ved=2ahUKEwjjztKioJHhAhWYTBUIHXriCmwQsAR6BAgJEAE&biw=1440&bih=769)
 
-## Acknowledgements
+#### Acknowledgements
 
-I received inspiration for this project from X
+I received inspiration for this project from the works of J.R.R Tokien. Please see [middle-earth](https://www.middleearth.com) for more information.

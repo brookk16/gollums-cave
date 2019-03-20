@@ -30,6 +30,7 @@ main {
     src: url(fonts/RINGM.ttf);
 }
 
+
 /* Navbar */
 
 .nav-font-styling {
@@ -149,6 +150,7 @@ main {
     color: #ffe100;
     margin-top: 67px;
 }
+
 /* Riddle */
 
 .question {
@@ -158,7 +160,6 @@ main {
     padding: 10px;
 
 }
-
 
 .ask-question-box {
     margin: 136px 0px 50px 0px;
@@ -221,14 +222,12 @@ main {
 
 }
 
-
 .bio-pic {
     margin: 28px 0px 0px 46px;
     max-width: 400px;
     -webkit-box-shadow: -1px 1px 5px 9px rgba(0, 0, 0, 0.75);
     -moz-box-shadow: -1px 1px 5px 9px rgba(0, 0, 0, 0.75);
     box-shadow: -1px 1px 5px 9px rgba(0, 0, 0, 0.75);
-
 }
 
 .spacer {
@@ -269,8 +268,6 @@ main {
     background-color: grey;
     border-radius: 5%;
     margin: 65px 0px 0px 0px;
-
-
 }
 
 .table-title {
@@ -291,15 +288,24 @@ main {
 #new-game-spacing {
     margin: 50px 0px 0px 0px;
     position: absolute;
-    top: 335px;
+}
 
-
+#yellow {
+    background-color: #ffe100;
 }
 
 /* Game over */
 
 .margin-top {
     margin-top: 22px;
+}
+
+.game-over-img {
+    margin: 15px;
+}
+
+.edge-blur {
+    box-shadow: 0 0 24px 10px black;
 }
 
 /* Footer */

@@ -7,12 +7,12 @@ along with a button to try the game again  -->
 
 <div class="col-12">
     <div class="row justify-content-center congratulations-message" role="alert">
-        Congratulations {{ player }}, you've completed the game! Your final score is {{ score }}. Check the highscore board to see how where you are
+        Congratulations {{ player }}, you've completed the game! Your final score is {{ score }}. Check the highscore board to see where you are
     </div>
-    <div class="row justify-content-center game_over_img">
+    <div class="row justify-content-center game-over-img">
         {% if score > 3%}
-        <img src="static/img/the_ring.png" alt="Bilbo's hand hold the one ring"> {% else %}
-        <img src="static/img/gollum_scary.png" class="move-to-bottom" alt="Gollum coming towards the player"> {% endif %}
+        <img src="static/img/the_ring.png" class="edge-blur" alt="Bilbo's hand hold the one ring"> {% else %}
+        <img src="static/img/gollum_scary.png" class="move-to-bottom edge-blur" alt="Gollum coming towards the player"> {% endif %}
     </div>
     <div class="row justify-content-center margin-top">
         <form method="POST" action="{{ url_for('new_game') }}">
