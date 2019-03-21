@@ -1,5 +1,7 @@
 # Gollum's Cave
 
+You can access the deployed web app [here](https://gollums-cave.herokuapp.com)
+
 This is a python3 and Flask riddle game app based on the encounter bewteen the creature Gollum and Bilbo Baggins, the hero of J.R.R Tolkien's "The Hobbit".
 
 This is the 3rd milestone project, required for completing the code institute's full stack web development course.
@@ -145,7 +147,7 @@ Issues:
 
 ## Deployment
 
-The project is deployed on Heroku, and can be accessed [here]() 
+The project is deployed on Heroku, and can be accessed [here](https://gollums-cave.herokuapp.com) 
 
 The Github for this project can be found [here](https://github.com/brookk16/gollums-cave). And can also be accessed via the github logo in the footer of the website.
 
@@ -157,8 +159,25 @@ Or clone the project into your working environment, using the command line:
 git clone https://github.com/brookk16/gollums-cave
 ~~~
 
-To deploy to Heroku 
+> Note: You will require a Github repository, if you are new to Github, please follow the link [here](https://github.com) for more infomation.
 
+To deploy to Heroku:
+
+1. Login to [Heroku](https://www.heroku.com) or create an account
+2. Create an app
+3. Go back to your IDE and add paste in the command to connect this Heroku app to your Github repository (Below "Existing Git repository")
+4. Make sure you have your code pushed to Github
+5. Then you can push your code to Heroku.
+~~~
+git push heroku master
+~~~
+
+You can also connect your Github repository to Heroku, so that each time you push to Github it goes to Heroku.
+* Go to Heroku 
+* Deploy 
+* Click on "Github" as the  "Deployment method" 
+* "Enable automatic deploys" 
+* Then click on "Deploy" to deploy your project 
 
 ## Credits
 
