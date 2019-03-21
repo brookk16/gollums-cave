@@ -157,6 +157,7 @@ Or clone the project into your working environment, using the command line:
 git clone https://github.com/brookk16/gollums-cave
 ~~~
 
+To deploy to Heroku 
 
 
 ## Credits
