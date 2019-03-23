@@ -19,6 +19,13 @@ Below you can read some of the user stories:
 
 Below you can see the wireframes:
 
+![index page](wireframes/index.png)
+![index page](wireframes/about.png)
+![index page](wireframes/about_2.png)
+![index page](wireframes/riddle.png)
+![index page](wireframes/highscore.png)
+![index page](wireframes/game_over.png)
+
 
 ## Features
 
